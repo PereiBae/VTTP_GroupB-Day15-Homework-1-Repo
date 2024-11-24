@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="${title ?: 'My Application'}">My Application</title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <nav>
+    <ul class="nav-bar">
+      <li><a th:href="@{/}">Home</a></li>
+      <li><a th:href="@{/carts}">My Carts</a></li>
+      <li><a th:href="@{/logout}">Logout</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <div th:insert="~{::content}"></div>
+</main>
+<footer>
+  <p>&copy; 2024 My Application. All rights reserved.</p>
+</footer>
+</body>
+</html>
+
+
+

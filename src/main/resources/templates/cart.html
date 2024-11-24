@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base.html :: head"></head>
+<body>
+<header th:replace="base.html :: nav"></header>
+<main class="carts-container">
+    <h1>My Carts</h1>
+    <form th:action="@{/carts/create}" method="post">
+        <button type="submit" class="btn-create-cart">Create New Cart</button>
+    </form>
+    <table class="cart-table">
+        <thead>
+        <tr>
+            <th>Cart ID</th>
+            <th>Total Items</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cartEntry : ${carts}">
+            <td th:text="${cartEntry.key}"></td>
+            <td th:text="${cartEntry.value.totalQuantity}"></td>
+            <td>
+                <a th:href="@{'/cart/' + ${cartEntry.key}}" class="btn-view-cart">View Cart</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+</body>
+</html>
+

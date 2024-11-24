@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base.html :: head"></head>
+<body>
+<header th:replace="base.html :: nav"></header>
+<main class="login-container">
+    <h1>Welcome Back</h1>
+    <form th:action="@{/login}" method="post">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+        <button type="submit" class="btn-login">Login</button>
+    </form>
+</main>
+</body>
+</html>
+
+
